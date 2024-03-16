@@ -11,7 +11,7 @@ import { filterProducts } from "./products-list-helper";
 export const Products = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
-  const [sortCriteria, setSortCriteria] = useState(0);
+  const [sortPriceCriteria, setSortPriceCriteria] = useState(0);
   const [ascending, setAscending] = useState(true);
   const [numOfProducts, setNumOfProducts] = useState(5);
   const { loading, error } = useProducts(ENDPOINT, numOfProducts);
@@ -20,7 +20,8 @@ export const Products = () => {
     products,
     searchTerm,
     categoryFilter,
-    sortCriteria
+    sortPriceCriteria,
+    ascending
   );
   //User interactions
   const debouncedSearch = debounce((search) => {
@@ -37,9 +38,9 @@ export const Products = () => {
     }
   };
 
-  const onSortChange = (event) => {
+  const onSortByPriceChange = (event) => {
     if (event) {
-      setSortCriteria(event.target.value);
+      setSortPriceCriteria(event.target.value);
     }
   };
 
@@ -82,8 +83,8 @@ export const Products = () => {
           <option value="electronics">Electronics</option>
         </select>
         <select
-          value={sortCriteria}
-          onChange={onSortChange}
+          value={sortPriceCriteria}
+          onChange={onSortByPriceChange}
           className="border border-gray-300 rounded-md px-4 py-2 mb-4"
         >
           <option value="price">Sort by Price</option>
@@ -95,7 +96,7 @@ export const Products = () => {
           onClick={onSortToggle}
           className="px-4 py-2 bg-blue-500 text-white rounded-md mb-4"
         >
-          {ascending ? "Sort Ascending" : "Sort Descending"}
+          {ascending ? "low to high" : "high to low"}
         </button>
       </div>
       {filteredProducts.length ? (

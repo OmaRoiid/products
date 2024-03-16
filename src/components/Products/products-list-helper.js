@@ -2,7 +2,8 @@ export const filterProducts = (
   products,
   searchTerm,
   categoryFilter,
-  sortCriteria
+  sortPriceCriteria,
+  ascending
 ) => {
   return products
     .filter((product) =>
@@ -12,10 +13,14 @@ export const filterProducts = (
       categoryFilter ? product.category === categoryFilter : true
     )
     .filter((product) =>
-      sortCriteria === 0
+      sortPriceCriteria === 0
         ? true
-        : sortCriteria >= 100
+        : sortPriceCriteria >= 100
         ? product.price >= 100
         : product.price < 100
-    );
+    )
+    .sort((a, b) => {
+      const sortOrder = ascending ? -1 : 1;
+      return sortOrder * (a.price - b.price);
+    });
 };

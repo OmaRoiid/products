@@ -1,7 +1,5 @@
 import Products from "./components/Products/Product-List";
 
-function App() {
+export const App = () => {
   return <Products />;
-}
-
-export default App;
+};
