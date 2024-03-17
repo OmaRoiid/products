@@ -30,8 +30,6 @@ const productsReducer = (state = initialProductsState, action) => {
   }
 };
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   products: productsReducer,
 });
-
-export default rootReducer;

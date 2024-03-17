@@ -1,2 +1,2 @@
 export const SET_PRODUCTS = "SET_PRODUCTS";
-export const ENDPOINT = "https://fakestoreapi.com/products";
+export const ENDPOINT = process.env.REACT_APP_API_URL;

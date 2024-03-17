@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setProducts } from "../reducers/reducer";
 
-const useProducts = (endpoint, numOfProducts) => {
+export const useProducts = (endpoint, numOfProducts) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -28,5 +28,3 @@ const useProducts = (endpoint, numOfProducts) => {
 
   return { loading, error };
 };
-
-export default useProducts;

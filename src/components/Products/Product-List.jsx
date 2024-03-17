@@ -2,7 +2,7 @@ import { debounce } from "lodash";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { ENDPOINT } from "../../constants/types";
-import useProducts from "../../hooks/use-product";
+import { useProducts } from "../../hooks/use-product";
 import { Loading } from "../Loading/Loading";
 import { NotFoundPage } from "../Not-Found/NotFound";
 import { ProductCard } from "../Product-Card/Product-Card";
@@ -87,7 +87,6 @@ export const Products = () => {
           onChange={onSortByPriceChange}
           className="border border-gray-300 rounded-md px-4 py-2 mb-4"
         >
-          <option value="price">Sort by Price</option>
           <option value="0">All</option>
           <option value="100">More than 100</option>
           <option value="99">less than 100</option>
@@ -119,5 +118,3 @@ export const Products = () => {
     </div>
   );
 };
-
-export default Products;
