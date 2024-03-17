@@ -12,6 +12,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] Create a helper file for Product list logic 
 - [x] unit test
 
+[Used Endpoint](https://fakestoreapi.com/products)
+
+### Screenshot
 ![Screenshot 2024-03-17 at 6 01 06 AM](https://github.com/OmaRoiid/products/assets/28982310/9342d135-1dff-4b3a-a57b-59630258461b)
 
 
